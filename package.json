@@ -28,6 +28,9 @@
     "files": [
       "dist/electron/**/*"
     ],
+    "publish": {
+      "provider": "github"
+    },
     "dmg": {
       "contents": [
         {
@@ -47,8 +50,7 @@
       "icon": "build/icons/icon.icns"
     },
     "win": {
-      "icon": "build/icons/icon.ico",
-      "publish": ["github"]
+      "icon": "build/icons/icon.ico"
     },
     "linux": {
       "icon": "build/icons"
@@ -56,6 +58,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "electron-log": "^2.2.14",
     "electron-updater": "^2.21.10",
     "firebase": "^4.13.1",
     "node-sass": "^4.8.3",

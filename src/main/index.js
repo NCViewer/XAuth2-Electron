@@ -36,7 +36,7 @@ function createWindow() {
     });
 }
 
-app.on('ready', createWindow);
+// app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
@@ -65,7 +65,8 @@ autoUpdater.logger = require("electron-log");
 autoUpdater.logger.transports.file.level = "info";
 
 autoUpdater.on('update-downloaded', () => {
-    console.log('update-downloaded lats quitAndInstall');
+
+    console.log('update-downloaded latest, Then quitAndInstall');
 
     if (process.env.NODE_ENV === 'production') {
         dialog.showMessageBox({
@@ -88,7 +89,7 @@ autoUpdater.on('update-downloaded', () => {
 })
 
 app.on('ready', () => {
-    if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates();
+    if (process.env.NODE_ENV === 'production') { autoUpdater.checkForUpdates() }
     
     createWindow();
 })
