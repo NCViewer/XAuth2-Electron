@@ -43,7 +43,10 @@
     
              <v-flex xs12 sm6>
                 <v-card dark color="secondary">
-                    <v-card-text class="px-0">More Data Goes Here</v-card-text>
+                    <v-card-text class="px-0">
+                        <div>More Data Goes Here</div>
+                        <div>Version: {{ clientVersion }}</div>
+                    </v-card-text>
                 </v-card>
             </v-flex>
 
@@ -52,10 +55,13 @@
 </template>
 
 <script>
+import { version } from '../../../package.json';
+
 export default {
     name: 'landing-page',
     data() {
         return {
+            clientVersion: version,
             headers: [
                 {
                     text: 'Name',
