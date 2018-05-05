@@ -28,7 +28,7 @@
             <v-flex xs12 sm6>
                 <v-card dark color="secondary">
                     <v-card-title primary-title class="pb-1">
-                        <div class="headline">Recent Files</div>
+                        <div class="headline">Recent Files:</div>
                     </v-card-title>
 
                     <div class="px-0">
