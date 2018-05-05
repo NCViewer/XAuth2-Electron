@@ -50,6 +50,11 @@ app.on('activate', () => {
     }
 });
 
+
+// Install `electron-debug` with `devtron`
+require('electron-debug')({ showDevTools: false })
+
+
 /**
  * Auto Updater
  *
@@ -59,7 +64,7 @@ app.on('activate', () => {
  */
 
 //*
-import { autoUpdater } from 'electron-updater'
+import { autoUpdater } from 'electron-updater';
 
 autoUpdater.logger = require("electron-log");
 autoUpdater.logger.transports.file.level = "info";
@@ -68,7 +73,7 @@ autoUpdater.on('update-downloaded', () => {
 
     console.log('update-downloaded latest, Then quitAndInstall');
 
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
         dialog.showMessageBox({
             type: 'info',
             title: 'Found Updates',
@@ -86,11 +91,15 @@ autoUpdater.on('update-downloaded', () => {
             }
         })
     }
-})
+});
 
 app.on('ready', () => {
     if (process.env.NODE_ENV === 'production') { autoUpdater.checkForUpdates() }
+
+    console.log(process.env.NODE_ENV);
+
+    autoUpdater.checkForUpdates();
     
     createWindow();
-})
+});
 //*/
