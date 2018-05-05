@@ -1,6 +1,6 @@
 {
   "name": "g28account",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Xander Luciano <xanderluciano@gmail.com>",
   "description": "Account Manager for testing connection to G28",
   "license": "MIT",
@@ -20,7 +20,7 @@
   },
   "repository": "https://github.com/NCViewer/XAuth2-Electron",
   "build": {
-    "productName": "G28.io Account Manager",
+    "productName": "G28.io Beta Client",
     "appId": "com.xanderluciano.xauth",
     "directories": {
       "output": "build"
