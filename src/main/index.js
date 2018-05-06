@@ -3,7 +3,7 @@ import { app, BrowserWindow, dialog } from 'electron' // eslint-disable-line
 import electronDebug from 'electron-debug'
 
 // Install `electron-debug` with `devtron`
-electronDebug({ showDevTools: true });
+electronDebug({ showDevTools: false });
 
 /**
  * Set `__static` path to static files in production

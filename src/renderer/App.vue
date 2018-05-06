@@ -170,7 +170,7 @@ export default {
     data() {
         return {
             drawer: true,
-            darkMode: true,
+            darkMode: false,
             user: {
                 email: '',
                 name: '',
