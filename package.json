@@ -1,6 +1,6 @@
 {
   "name": "g28account",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Xander Luciano <xanderluciano@gmail.com>",
   "description": "Account Manager for testing connection to G28",
   "license": "MIT",
