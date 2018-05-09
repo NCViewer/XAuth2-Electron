@@ -1,6 +1,6 @@
 {
   "name": "xauth2",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "author": "Xander Luciano <xanderluciano@gmail.com>",
   "description": "Application for testing OAuth2 and related functionality.",
   "license": "MIT",
