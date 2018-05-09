@@ -1,6 +1,6 @@
 {
   "name": "xauth2",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "author": "Xander Luciano <xanderluciano@gmail.com>",
   "description": "Application for testing OAuth2 and related functionality.",
   "license": "MIT",
@@ -31,7 +31,6 @@
       "provider": "github"
     },
     "dmg": {
-      "title": "${productName} v${version}",
       "contents": [
         {
           "x": 410,

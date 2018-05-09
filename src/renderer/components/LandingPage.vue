@@ -44,8 +44,8 @@
              <v-flex xs12 sm6>
                 <v-card dark color="primary">
                     <v-card-text class="px-0">
-                        <div> - Current App Version - </div>
-                        <div>{{ clientVersion }}</div>
+                        <div>Current App Version</div>
+                        <div class="mt-2 headline">Beta v{{ clientVersion }}</div>
                     </v-card-text>
                 </v-card>
             </v-flex>

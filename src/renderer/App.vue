@@ -26,7 +26,7 @@
                         </v-list-tile-action>
                         <v-list-tile-content>
                             <v-list-tile-title>{{ user.name ? user.name : 'Sign in Below' }}</v-list-tile-title>
-                            <v-list-tile-sub-title>{{ user.email ? user.email : `...or else I won't like you` }}</v-list-tile-sub-title>
+                            <v-list-tile-sub-title>{{ user.email ? user.email : `...or else nothing works.` }}</v-list-tile-sub-title>
                         </v-list-tile-content>
                     </v-list-tile>
 
@@ -141,18 +141,26 @@
                 color='primary'>
 
                 <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-                <v-toolbar-title class="no-drag" @click.stop="drawer = !drawer">G28.io - XAuth2 RESTful Client</v-toolbar-title>
+                <v-toolbar-title class="no-select m-0" @click.stop="drawer = !drawer">XAuth2 - A RESTful Test Client</v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-btn icon @click="showDevTools">
                     <v-icon>web</v-icon>
                 </v-btn>
-                <v-btn icon>
-                    <v-icon>more_vert</v-icon>
+                <v-btn icon @click="minimizeApp">
+                    <v-icon>minimize</v-icon>
+                </v-btn>
+                <v-btn icon @click="maximizeApp">
+                    <v-icon>check_box_outline_blank</v-icon>
+                </v-btn>
+                <v-btn icon @click="closeApp">
+                    <v-icon>clear</v-icon>
                 </v-btn>
             </v-toolbar>
 
             <v-content fluid>
-                <router-view></router-view>
+                <div class="scroll-container">
+                    <router-view></router-view>
+                </div>
             </v-content>
 
         </v-app>
@@ -307,6 +315,23 @@ export default {
         showDevTools() {
             remote.getCurrentWindow().toggleDevTools();
         },
+
+        minimizeApp() {
+            remote.getCurrentWindow().minimize();
+        },
+
+        maximizeApp() {
+            let w = remote.getCurrentWindow();
+
+            w.isMaximized() ? 
+                w.unmaximize() :
+                w.maximize();
+        },
+
+        closeApp() {
+            remote.getCurrentWindow().close();
+        },
+
     },
 
     computed: {
@@ -327,7 +352,17 @@ export default {
     @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
     @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons');
 
+    html { overflow: hidden; }
+
     body { font-family: 'Source Sans Pro', sans-serif; }
+
+    .content { max-height: 100vh; }
+
+    .scroll-container {
+        height: 100%;
+        overflow-y: auto;
+        backface-visibility: hidden;
+    }
 
     .drag {
         -webkit-app-region: drag;
@@ -337,6 +372,12 @@ export default {
             -webkit-app-region: no-drag;
         }
     }
+
     .no-drag { -webkit-app-region: no-drag; }
+
+    .no-select {
+        user-select: none;
+        cursor: default;
+    }
 
 </style>

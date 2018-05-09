@@ -1,5 +1,3 @@
-// import firebase from 'firebase';
-
 import Vue from 'vue';
 import axios from 'axios';
 import Vuetify from 'vuetify';
@@ -13,18 +11,6 @@ import router from './router';
 
 import picker from './utils/DrivePicker';
 picker.init();
-
-/* Firebase config
-const config = {
-    apiKey: 'AIzaSyCykBZSUhpYGGSoZBnFzkchsB3xCQRG0BM',
-    // authDomain: 'xauth2-proto.firebaseapp.com',
-    databaseURL: 'https://xauth2-proto.firebaseio.com',
-    // projectId: 'xauth2-proto',
-    storageBucket: 'xauth2-proto.appspot.com',
-    // messagingSenderId: '517541031080',
-};
-// */
-// firebase.initializeApp(config);
 
 // Vue Setup
 Vue.use(Vuetify);

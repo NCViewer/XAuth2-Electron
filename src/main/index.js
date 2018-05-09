@@ -1,6 +1,4 @@
 import { app, BrowserWindow, dialog } from 'electron' // eslint-disable-line
-
-// Install `electron-debug` with `devtron`
 import electronDebug from 'electron-debug'
 
 /**
@@ -26,8 +24,10 @@ function createWindow() {
         useContentSize: true,
         title: 'XAuth2',
         titleBarStyle: 'hidden',
-        backgroundColor: '#d9d9d9',
+        frame: (process.platform === 'darwin') ? true : false,
+        backgroundColor: '#1E1E1E',
         icon: `${__static}/logo.png`,
+
         webPreferences: {
             // nativeWindowOpen: true,
         },
@@ -36,9 +36,6 @@ function createWindow() {
     electronDebug({ enabled: true, showDevTools: false });
 
     mainWindow.loadURL(winURL);
-
-    // Opens Dev Tools on load
-    // mainWindow.openDevTools();
 
     mainWindow.on('closed', () => {
         mainWindow = null;
