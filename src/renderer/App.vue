@@ -137,13 +137,14 @@
                 app
                 dark
                 :clipped-left="$vuetify.breakpoint.mdAndUp"
+                class='drag'
                 color='primary'>
 
                 <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-                <v-toolbar-title @click.stop="drawer = !drawer">G28.io - XAuth2 RESTful Client</v-toolbar-title>
+                <v-toolbar-title class="no-drag" @click.stop="drawer = !drawer">G28.io - XAuth2 RESTful Client</v-toolbar-title>
                 <v-spacer></v-spacer>
-                <v-btn icon>
-                    <v-icon>apps</v-icon>
+                <v-btn icon @click="showDevTools">
+                    <v-icon>web</v-icon>
                 </v-btn>
                 <v-btn icon>
                     <v-icon>more_vert</v-icon>
@@ -159,9 +160,10 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { remote } from 'electron'
+import { mapGetters, mapMutations } from 'vuex'
 
-import picker from './utils/DrivePicker';
+import picker from './utils/DrivePicker'
 
 /* eslint-disable no-unused-vars, prefer-const, no-trailing-spaces */
 export default {
@@ -301,6 +303,10 @@ export default {
                 uid: '',
             }
         },
+
+        showDevTools() {
+            remote.getCurrentWindow().toggleDevTools();
+        },
     },
 
     computed: {
@@ -322,4 +328,15 @@ export default {
     @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons');
 
     body { font-family: 'Source Sans Pro', sans-serif; }
+
+    .drag {
+        -webkit-app-region: drag;
+        user-select: none;
+
+        button {
+            -webkit-app-region: no-drag;
+        }
+    }
+    .no-drag { -webkit-app-region: no-drag; }
+
 </style>

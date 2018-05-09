@@ -1,9 +1,7 @@
 import { app, BrowserWindow, dialog } from 'electron' // eslint-disable-line
 
-import electronDebug from 'electron-debug'
-
 // Install `electron-debug` with `devtron`
-// electronDebug({ showDevTools: false });
+import electronDebug from 'electron-debug'
 
 /**
  * Set `__static` path to static files in production
@@ -26,8 +24,9 @@ function createWindow() {
         height: 720,
         width: 1280,
         useContentSize: true,
-        title: 'G28.io',
-        backgroundColor: '#607D8B',
+        title: 'XAuth2',
+        titleBarStyle: 'hidden',
+        backgroundColor: '#d9d9d9',
         icon: `${__static}/logo.png`,
         webPreferences: {
             // nativeWindowOpen: true,
@@ -45,8 +44,6 @@ function createWindow() {
         mainWindow = null;
     });
 }
-
-// app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
     app.quit();
@@ -71,7 +68,6 @@ app.on('activate', () => {
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
  */
 
-//*
 import { autoUpdater } from 'electron-updater';
 
 autoUpdater.logger = require("electron-log");
@@ -94,18 +90,17 @@ autoUpdater.on('update-downloaded', () => {
                 autoUpdater.quitAndInstall(isSilent, isForceRunAfter);
             }
             else {
-                updater.enabled = true
-                updater = null
+                updater.enabled = true;
+                updater = null;
             }
-        })
+        });
     }
 });
 
 app.on('ready', () => {
-    if (process.env.NODE_ENV === 'production') { autoUpdater.checkForUpdates() }
-
-    console.log(process.env.NODE_ENV);
+    if (process.env.NODE_ENV === 'production') {
+        autoUpdater.checkForUpdates();
+    }
     
     createWindow();
 });
-//*/
