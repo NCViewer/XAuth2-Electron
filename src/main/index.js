@@ -90,8 +90,8 @@ autoUpdater.on('update-downloaded', () => {
                 autoUpdater.quitAndInstall(isSilent, isForceRunAfter);
             }
             else {
-                updater.enabled = true;
-                updater = null;
+                // enabled = true;
+                // updater = null;
             }
         });
     }
