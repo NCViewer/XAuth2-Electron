@@ -1,9 +1,0 @@
-version: 0.2.0
-files:
-  - url: g28account-setup-0.2.0.exe
-    sha512: pgAIlnJV3w+D0T62eiaw1RApj+cc+m3fnMNaXrQxFDeDfp+zUMORDYLBKddFhdpjJjv7m4T/jH88KvYSDVoVlA==
-    size: 46634465
-path: g28account-setup-0.2.0.exe
-sha512: pgAIlnJV3w+D0T62eiaw1RApj+cc+m3fnMNaXrQxFDeDfp+zUMORDYLBKddFhdpjJjv7m4T/jH88KvYSDVoVlA==
-sha2: 8f1f65e398336ce2efbd3258d094ada44a5890f0dc3b758ce9fb45d6975b807e
-releaseDate: '2018-05-05T11:42:41.802Z'

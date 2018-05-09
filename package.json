@@ -1,8 +1,8 @@
 {
-  "name": "g28account",
-  "version": "0.2.2",
+  "name": "xauth2",
+  "version": "0.2.4",
   "author": "Xander Luciano <xanderluciano@gmail.com>",
-  "description": "Account Manager for testing connection to G28",
+  "description": "Application for testing OAuth2 and related functionality.",
   "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
@@ -20,7 +20,6 @@
   },
   "repository": "https://github.com/NCViewer/XAuth2-Electron",
   "build": {
-    "productName": "XAuth2 [Beta]",
     "appId": "com.xanderluciano.xauth",
     "directories": {
       "output": "build"
