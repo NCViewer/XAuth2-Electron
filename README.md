@@ -1,4 +1,6 @@
-# g28account
+# XAuth2 - Authentication Test Client in Electron
+
+[![Build Status](https://travis-ci.org/NCViewer/XAuth2-Electron.svg?branch=master)](https://travis-ci.org/NCViewer/XAuth2-Electron)
 
 > Account Manager for testing connection to G28
 
