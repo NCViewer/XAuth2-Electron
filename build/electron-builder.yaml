@@ -8,6 +8,7 @@ files:
 publish:
   provider: github
 dmg:
+  title: XAuth2
   contents:
     - x: 410
       'y': 150

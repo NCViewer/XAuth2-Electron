@@ -3,7 +3,7 @@ import { app, BrowserWindow, dialog } from 'electron' // eslint-disable-line
 import electronDebug from 'electron-debug'
 
 // Install `electron-debug` with `devtron`
-electronDebug({ showDevTools: false });
+// electronDebug({ showDevTools: false });
 
 /**
  * Set `__static` path to static files in production
@@ -34,9 +34,12 @@ function createWindow() {
         },
     });
 
+    electronDebug({ enabled: true, showDevTools: false });
+
     mainWindow.loadURL(winURL);
 
-    mainWindow.openDevTools();
+    // Opens Dev Tools on load
+    // mainWindow.openDevTools();
 
     mainWindow.on('closed', () => {
         mainWindow = null;
@@ -46,6 +49,8 @@ function createWindow() {
 // app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
+    app.quit();
+
     if (process.platform !== 'darwin') {
         app.quit();
     }
